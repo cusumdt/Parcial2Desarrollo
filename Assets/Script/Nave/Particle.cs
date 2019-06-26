@@ -27,7 +27,7 @@ public class Particle : MonoBehaviour
         }
         else
         {
-            system.Pause();
+           // system.Pause();
         }
         
     }

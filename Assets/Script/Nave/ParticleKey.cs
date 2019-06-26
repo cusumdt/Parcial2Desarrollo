@@ -8,10 +8,12 @@ public class ParticleKey : MonoBehaviour
     public GameObject Derecha;
     public GameObject Izquierda;
 
-    Particle particula;
-    Particle particulaDerecha;
-    Particle particulaIzquierda;
-    
+    void Start()
+    {
+        Cohete.SetActive(false);
+        Derecha.SetActive(false);
+        Izquierda.SetActive(false);
+    }
     void Update()
     {
         particula = Cohete.GetComponent<Particle>();
@@ -19,27 +21,28 @@ public class ParticleKey : MonoBehaviour
         particulaIzquierda = Izquierda.GetComponent<Particle>();
         if(Input.GetKey("up"))
         {
-            particula.on = true;
+            Cohete.SetActive(true);
+            //particula.gameObject.SetActive(true);
         }
-        else
+        else if (Input.GetKeyUp("up"))
         {
-            particula.on = false;
+            Cohete.SetActive(false);
         }
         if(Input.GetKey("left"))
         {
-            particulaIzquierda.on = true;
+            Izquierda.SetActive(true);
         }
-        else
+        else if (Input.GetKeyUp("left"))
         {
-            particulaIzquierda.on = false;
+            Izquierda.SetActive(false);
         }
         if(Input.GetKey("right"))
         {
-            particulaDerecha.on = true;
+            Derecha.SetActive(true);
         }
-        else
+        else if (Input.GetKeyUp("right"))
         {
-            particulaDerecha.on = false;
+            Derecha.SetActive(false);
         }
     }
 }
