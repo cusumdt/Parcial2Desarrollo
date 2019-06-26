@@ -16,9 +16,6 @@ public class ParticleKey : MonoBehaviour
     }
     void Update()
     {
-        particula = Cohete.GetComponent<Particle>();
-        particulaDerecha = Derecha.GetComponent<Particle>();
-        particulaIzquierda = Izquierda.GetComponent<Particle>();
         if(Input.GetKey("up"))
         {
             Cohete.SetActive(true);
