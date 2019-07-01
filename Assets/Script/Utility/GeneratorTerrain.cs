@@ -9,6 +9,7 @@ public class GeneratorTerrain : MonoBehaviour
     void Start()
     {
         int rand = Random.Range(0,cantTerrains);
+        Debug.Log(rand);
         GameObject terrain = Instantiate(terrains[rand],terrains[rand].transform.position,Quaternion.identity);
     }
 

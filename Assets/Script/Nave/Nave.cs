@@ -52,8 +52,7 @@ public class Nave : Singleton<Nave>
         }
         else if(colision || colisionMontana)
         {
-            colision = false;
-            colisionMontana = false;
+         
             GameObject naveActual = this.gameObject;
             explosion.SetActive(true);
             explosion.transform.position = new Vector3 (naveActual.transform.position.x,naveActual.transform.position.y,naveActual.transform.position.z-2.0f);
@@ -111,6 +110,8 @@ public class Nave : Singleton<Nave>
     IEnumerator ifDead()
     {
         yield return new WaitForSeconds(2.0f);
+        colision = false;
+        colisionMontana = false;
         GameObject naveActual = this.gameObject;
         naveActual.GetComponent<SpriteRenderer>().sprite=naveTomas;
         darkMater = initDarkMater;
